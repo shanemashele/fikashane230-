@@ -6,8 +6,9 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Initialize Wikipedia API
-wiki_wiki = wikipediaapi.Wikipedia('en')
+# Initialize Wikipedia API with user agent
+user_agent = "StreamlitBot/1.0 (https://yourwebsite.com)"
+wiki_wiki = wikipediaapi.Wikipedia('en', headers={'User-Agent': user_agent})
 
 # Setting page title and header
 st.set_page_config(page_title="Enhanced Wikipedia Chatbot", page_icon=":robot_face:")
